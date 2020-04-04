@@ -1,0 +1,39 @@
+<div *ngIf="game$ | async as game">
+
+  <div class="columns">
+
+    <div class="column">
+
+      <app-game-character [character]="game.player"></app-game-character>
+
+    </div>
+
+    <div class="column">
+
+      <app-game-character [character]="game.dragon"></app-game-character>
+
+    </div>
+
+  </div>
+
+  <div class="columns">
+
+    <div class="column">
+
+      <app-game-action-list [running]="game.running" (attack)="handleAttack($event)" (heal)="handleHeal()" (quitGame)="handleQuitGame()" (startGame)="handleStartGame()"></app-game-action-list>
+
+    </div>
+
+  </div>
+
+  <div class="columns">
+
+    <div class="column">
+
+      <app-game-message-list [messageList]="game.messageList"></app-game-message-list>
+
+    </div>
+
+  </div>
+
+</div>

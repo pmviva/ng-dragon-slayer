@@ -1,0 +1,15 @@
+<section class="card">
+
+  <header class="card-header">
+
+    <p class="card-header-title is-centered">{{ character.name | translate }}</p>
+
+  </header>
+
+  <div class="card-content">
+
+    <progress class="progress is-success" [value]="character.health" max="100"></progress>
+
+  </div>
+
+</section>

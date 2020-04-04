@@ -1,0 +1,23 @@
+<section class="card">
+
+  <header class="card-header">
+
+    <p class="card-header-title is-centered">{{ 'components.gamemessagelist.title' | translate }}</p>
+
+  </header>
+
+  <div class="card-content has-text-centered">
+
+    <ul>
+
+      <ng-container *ngFor="let message of messageList; trackBy: trackByIndex">
+
+        <li>{{ message.key | translate:message.params }}</li>
+
+      </ng-container>
+
+    </ul>
+
+  </div>
+
+</section>

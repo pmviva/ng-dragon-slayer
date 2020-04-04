@@ -1,0 +1,55 @@
+<header>
+
+  <nav class="navbar is-dark" role="navigation"
+    [attr.aria-label]="'components.header.navbar.arialabel' | translate">
+
+    <div class="navbar-brand">
+
+      <a class="navbar-item"
+        [routerLink]="['/']">{{ 'components.header.navbar.navbarbrand.anchor' | translate }}</a>
+
+      <a class="navbar-burger" [class.is-active]="active" role="button" [attr.aria-expanded]="active" [attr.aria-label]="'components.header.navbar.navbarbrand.navbarburger.arialabel' | translate" (click)="toggleActive()">
+
+        <span aria-hidden="true"></span>
+
+        <span aria-hidden="true"></span>
+
+        <span aria-hidden="true"></span>
+
+      </a>
+
+    </div>
+
+    <div class="navbar-menu" [class.is-active]="active">
+
+      <div class="navbar-end">
+
+        <a class="navbar-item" [routerLink]="['/home']" routerLinkActive="is-active">{{ 'components.header.navbar.navbarmenu.home.anchor' | translate }}</a>
+
+        <a class="navbar-item" [routerLink]="['/game']" routerLinkActive="is-active">{{ 'components.header.navbar.navbarmenu.game.anchor' | translate }}</a>
+
+        <a class="navbar-item" [routerLink]="['/about']" routerLinkActive="is-active">{{ 'components.header.navbar.navbarmenu.about.anchor' | translate }}</a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+
+          <a class="navbar-link">{{ 'components.header.navbar.navbarmenu.languages.anchor' | translate }}</a>
+
+          <div class="navbar-dropdown">
+
+            <ng-container *ngFor="let language of languages; trackBy: trackByIndex">
+
+              <a class="navbar-item" (click)="changeLanguage(language)">{{ 'languages.' + language | translate }}</a>
+
+            </ng-container>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+</header>

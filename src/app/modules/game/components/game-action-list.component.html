@@ -1,0 +1,35 @@
+<section class="card">
+
+  <header class="card-header">
+
+    <p class="card-header-title is-centered">{{ 'components.gameactionlist.title' | translate }}</p>
+
+  </header>
+
+  <div class="card-content">
+
+    <div class="buttons is-centered">
+
+      <div *ngIf="running; else notRunning">
+
+        <button class="button is-dark" (click)="emitAttack(false)">{{ 'components.gameactionlist.button.normalattack' | translate }}</button>
+
+        <button class="button is-dark" (click)="emitAttack(true)">{{ 'components.gameactionlist.button.specialattack' | translate }}</button>
+
+        <button class="button is-dark" (click)="emitHeal()">{{ 'components.gameactionlist.button.heal' | translate }}</button>
+
+        <button class="button is-dark" (click)="emitQuitGame()">{{ 'components.gameactionlist.button.quitgame' | translate }}</button>
+
+      </div>
+
+      <ng-template #notRunning>
+
+        <button class="button is-dark" (click)="emitStartGame()">{{ 'components.gameactionlist.button.startgame' | translate }}</button>
+
+      </ng-template>
+
+    </div>
+
+  </div>
+
+</section>
